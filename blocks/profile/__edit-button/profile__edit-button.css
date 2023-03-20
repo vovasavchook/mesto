@@ -1,0 +1,15 @@
+.profile__edit-button {
+  box-sizing: border-box;
+
+  width: 24px;
+  height: 24px;
+
+  border: 1px solid #fff;
+
+  /* grid-row: 1 / span 2; */
+  /* grid-column: 2; */
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}

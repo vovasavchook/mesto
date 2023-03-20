@@ -1,0 +1,8 @@
+.profile__user-name{
+  margin: 0;
+  padding-bottom: 9px;
+
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 48px;
+}
