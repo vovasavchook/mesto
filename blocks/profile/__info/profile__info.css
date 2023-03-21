@@ -11,3 +11,12 @@
   /* row-gap: 9px; */
   column-gap: 18px;
 }
+
+
+@media screen and (max-width: 703px) {
+  .profile__info {
+    padding: 0 0 8px;
+    justify-items: center;
+    column-gap: 10px;
+  }
+}
