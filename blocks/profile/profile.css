@@ -24,14 +24,3 @@
   }
 
 }
-
-/* @media screen and (min-width: 703px){
-  .profile {
-    max-height: 120px;
-
-    display: grid;
-    grid-template-columns: min-content 1fr min-content;
-    align-items: center;
-    column-gap: 30px;
-  }
-} */
