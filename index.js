@@ -10,8 +10,8 @@ let userNameInput = document.querySelector('#user-name');
 let userProfessionInput = document.querySelector('#user-profession');
 
 function openPopup() {
-  userNameInput.setAttribute('value', userName.textContent);
-  userProfessionInput.setAttribute('value', userProfession.textContent);
+  userNameInput.value = userName.textContent;
+  userProfessionInput.value = userProfession.textContent;
 
   popup.classList.add('popup_opened');
 };

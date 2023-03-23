@@ -1,21 +1,29 @@
 .profile__user-profession {
   margin: 0;
 
-  grid-column: 1 / span 2;
-
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+
+  /* ############## */
+  grid-column: 1 / span 2;
 }
 
 @media screen and (max-width: 703px) {
   .profile__user-profession {
+    max-width: 282px;
+
+    grid-column: 1 / span 2;
+
     font-size: 14px;
     line-height: 17px;
 
-    max-width: 100%;
+
+
+
+    align-self: center;
   }
 }

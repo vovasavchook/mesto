@@ -17,10 +17,11 @@
     max-height: 286px;
 
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, max-content);
+    grid-template-columns: min-content;
+    grid-template-rows: repeat(3, 1fr);
     row-gap: 26px;
     justify-items: center;
+    justify-content: center;
   }
 
 }
