@@ -20,14 +20,14 @@
           <img class="profile__avatar" src="./images/avatar.png" alt="Жак-Ив Кусто">
           <div class="profile__info">
             <h1 class="profile__user-name">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button" type="button"></button>
+            <button class="profile__edit-button" name="edit" type="button"></button>
             <p class="profile__user-profession">Исследователь океана</p>
           </div>
-          <button class="profile__add-button" type="button"></button>
+          <button class="profile__add-button" name="add" type="button"></button>
 
-          <div class="popup">
-            <div class="popup__container">
-              <form class="form" name="user-info-form">
+          <div class="popup" id="edit-popup">
+            <div class="popup__container popup__container_type_input">
+              <form class="form" id="edit-form" name="edit">
                 <h2 class="form__title">Редактировать профиль</h2>
                 <fieldset class="form__fieldset">
                   <input class="form__text-input" type="text" id="user-name" name="user-name-input">
@@ -38,56 +38,33 @@
               <button class="popup__close-button" type="button"></button>
             </div>
           </div>
+
+          <div class="popup" id="add-popup">
+            <div class="popup__container popup__container_type_input">
+              <form class="form" id="add-form" name="add">
+                <h2 class="form__title">Новое место</h2>
+                <fieldset class="form__fieldset">
+                  <input class="form__text-input" type="text" id="card-title" name="card-title-input" placeholder="Название">
+                  <input class="form__text-input" type="text" id="card-photo" name="card-photo-input" placeholder="Ссылка на картинку">
+                </fieldset>
+                <input class="form__submit-button" type="submit" value="Создать">
+              </form>
+              <button class="popup__close-button" type="button"></button>
+            </div>
+          </div>
+
         </section>
 
         <section class="cards">
-          <div class="card">
-            <img src="./images/Karachayevsk_kirill-pershin-1088404-unsplash.png" alt="Карачаевск">
-            <div class="card__info">
-              <h2 class="card__title">Карачаевск</h2>
-              <button class="card__like-button" type="button"></button>
+
+          <div class="popup" id="photo-popup">
+            <div class="popup__container">
+              <button class="popup__close-button popup__close-button_type_photo" type="button"></button>
+              <img class="popup__photo">
+              <p class="popup__title"></p>
             </div>
           </div>
 
-          <div class="card">
-            <img src="./images/Elbrus-mountain_kirill-pershin-1404681-unsplash.png" alt="гора Эльбрус">
-            <div class="card__info">
-              <h2 class="card__title">Гора Эльбрус</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="./images/Dombay_kirill-pershin-1556355-unsplash.png" alt="Домбай">
-            <div class="card__info">
-              <h2 class="card__title">Домбай</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="./images/Elbrus-mountain_kirill-pershin-1404681-unsplash.png" alt="гора Эльбрус">
-            <div class="card__info">
-              <h2 class="card__title">Гора Эльбрус</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="./images/Dombay_kirill-pershin-1556355-unsplash.png" alt="Домбай">
-            <div class="card__info">
-              <h2 class="card__title">Домбай</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="./images/Karachayevsk_kirill-pershin-1088404-unsplash.png" alt="Карачаевск">
-            <div class="card__info">
-              <h2 class="card__title">Карачаево-Черкесия</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </div>
         </section>
 
       </main>
@@ -97,6 +74,17 @@
       </footer>
 
     </div>
+
+    <template id="card-template">
+      <div class="card">
+        <button class="card__remove-button"></button>
+        <img class="card__photo">
+        <div class="card__info">
+          <h2 class="card__title"></h2>
+          <button class="card__like-button" type="button"></button>
+        </div>
+      </div>
+    </template>
 
     <script src="./scripts/index.js"></script>
 
