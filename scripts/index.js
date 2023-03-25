@@ -64,6 +64,7 @@ function addNewCard(name, link){
   const cardPhoto = card.querySelector('.card__photo');
   const cardLikeButton = card.querySelector('.card__like-button');
   const cardRemoveButton = card.querySelector('.card__remove-button');
+  const photoElement = photoPopup.querySelector('.popup__photo');
 
   cardTitle.textContent = name;
   cardPhoto.src = link;
@@ -71,8 +72,9 @@ function addNewCard(name, link){
   cardLikeButton.addEventListener('click', (evt) => evt.target.classList.toggle('card__like-button_active'));
   cardRemoveButton.addEventListener('click', (evt) => evt.target.closest('.card').remove());
   cardPhoto.addEventListener('click', (evt) => {
-    const title= evt.target.nextElementSibling.firstElementChild.textContent;
-    photoPopup.querySelector('.popup__photo').src = evt.target.src;
+    const title = evt.target.nextElementSibling.firstElementChild.textContent;
+    photoElement.src = evt.target.src;
+    photoElement.alt = title;
     photoPopup.querySelector('.popup__title').textContent = title;
     openPopup(photoPopup);
   });
