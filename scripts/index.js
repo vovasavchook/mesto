@@ -67,6 +67,7 @@ function addNewCard(name, link){
 
   cardTitle.textContent = name;
   cardPhoto.src = link;
+  cardPhoto.alt = name;
   cardLikeButton.addEventListener('click', (evt) => evt.target.classList.toggle('card__like-button_active'));
   cardRemoveButton.addEventListener('click', (evt) => evt.target.closest('.card').remove());
   cardPhoto.addEventListener('click', (evt) => {
