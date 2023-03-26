@@ -24,47 +24,9 @@
             <p class="profile__user-profession">Исследователь океана</p>
           </div>
           <button class="profile__add-button" name="add" type="button"></button>
-
-          <div class="popup" id="edit-popup">
-            <div class="popup__container popup__container_type_input">
-              <form class="form" id="edit-form" name="edit">
-                <h2 class="form__title">Редактировать профиль</h2>
-                <fieldset class="form__fieldset">
-                  <input class="form__text-input" type="text" id="user-name" name="user-name-input">
-                  <input class="form__text-input" type="text" id="user-profession" name="user-profession-input">
-                </fieldset>
-                <input class="form__submit-button" type="submit" value="Сохранить">
-              </form>
-              <button class="popup__close-button" type="button"></button>
-            </div>
-          </div>
-
-          <div class="popup" id="add-popup">
-            <div class="popup__container popup__container_type_input">
-              <form class="form" id="add-form" name="add">
-                <h2 class="form__title">Новое место</h2>
-                <fieldset class="form__fieldset">
-                  <input class="form__text-input" type="text" id="card-title" name="card-title-input" placeholder="Название">
-                  <input class="form__text-input" type="text" id="card-photo" name="card-photo-input" placeholder="Ссылка на картинку">
-                </fieldset>
-                <input class="form__submit-button" type="submit" value="Создать">
-              </form>
-              <button class="popup__close-button" type="button"></button>
-            </div>
-          </div>
-
         </section>
 
         <section class="cards">
-
-          <div class="popup" id="photo-popup">
-            <div class="popup__container">
-              <button class="popup__close-button popup__close-button_type_photo" type="button"></button>
-              <img class="popup__photo" alt="you-should-not-see-it-anyways" src="you-should-not-see-it-anyways">
-              <p class="popup__title"></p>
-            </div>
-          </div>
-
         </section>
 
       </main>
@@ -73,6 +35,42 @@
         <p class="footer__copyright">© 2020 Mesto Russia</p>
       </footer>
 
+    </div>
+
+    <div class="popup" id="edit-popup">
+      <div class="popup__container popup__container_type_input">
+        <form class="form" id="edit-form" name="edit">
+          <h2 class="form__title">Редактировать профиль</h2>
+          <fieldset class="form__fieldset">
+            <input class="form__text-input" type="text" id="user-name" name="user-name-input">
+            <input class="form__text-input" type="text" id="user-profession" name="user-profession-input">
+          </fieldset>
+          <input class="form__submit-button" type="submit" value="Сохранить">
+        </form>
+        <button class="popup__close-button" type="button"></button>
+      </div>
+    </div>
+
+    <div class="popup" id="add-popup">
+      <div class="popup__container popup__container_type_input">
+        <form class="form" id="add-form" name="add">
+          <h2 class="form__title">Новое место</h2>
+          <fieldset class="form__fieldset">
+            <input class="form__text-input" type="text" id="card-title" name="card-title-input" placeholder="Название">
+            <input class="form__text-input" type="text" id="card-photo" name="card-photo-input" placeholder="Ссылка на картинку">
+          </fieldset>
+          <input class="form__submit-button" type="submit" value="Создать">
+        </form>
+        <button class="popup__close-button" type="button"></button>
+      </div>
+    </div>
+
+    <div class="popup" id="photo-popup">
+      <div class="popup__container">
+        <button class="popup__close-button popup__close-button_type_photo" type="button"></button>
+        <img class="popup__photo" alt="you-should-not-see-it-anyways" src="https://yastatic.net/q/logoaas/v2/%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81.svg?circle=white&color=fff&first=black">
+        <p class="popup__title"></p>
+      </div>
     </div>
 
     <template id="card-template">
