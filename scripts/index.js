@@ -19,8 +19,8 @@ const userProfessionElement = document.querySelector('.profile__user-profession'
 const profileAddButton = document.querySelector('.profile__add-button');
 const profileEditButton = document.querySelector('.profile__edit-button');
 
-const addForm = document.querySelector('#add-form');
 const editForm = document.querySelector('#edit-form');
+const addForm = document.querySelector('#add-form');
 
 const userNameInput = document.edit['user-name-input']; // <- неправильно понял замечание и нашел вот такую фичу, лол
 const userProfessionInput = document.edit['user-profession-input'];
@@ -31,14 +31,16 @@ const editPopup = document.querySelector('#edit-popup');
 const addPopup = document.querySelector('#add-popup');
 const photoPopup = document.querySelector('#photo-popup');
 
+const popupCloseButtons = document.querySelectorAll('.popup__close-button');
+
 const photoPopupTitle = photoPopup.querySelector('.popup__title');
+const photoPopupImage = photoPopup.querySelector('.popup__image');
 
 const cardsContainer = document.querySelector('.cards');
 const cardTemplate = document.querySelector('#card-template').content;
 
 function handleEditForm(evt){
   evt.preventDefault();
-  const form = evt.target;
   userNameElement.textContent = userNameInput.value;
   userProfessionElement.textContent = userProfessionInput.value;
 
@@ -46,7 +48,6 @@ function handleEditForm(evt){
 
 function handleAddForm(evt){
   evt.preventDefault();
-  const form = evt.target;
   const title = cardTitleInput.value;
   const photo = cardPhotoInput.value;
 
@@ -69,7 +70,6 @@ function createCard(name, link){
   const cardPhoto = card.querySelector('.card__photo');
   const cardLikeButton = card.querySelector('.card__like-button');
   const cardRemoveButton = card.querySelector('.card__remove-button');
-  const photoElement = photoPopup.querySelector('.popup__photo');
 
   cardTitle.textContent = name;
   cardPhoto.src = link;
@@ -78,11 +78,12 @@ function createCard(name, link){
   cardLikeButton.addEventListener('click', (evt) => evt.target.classList.toggle('card__like-button_active'));
   cardRemoveButton.addEventListener('click', (evt) => evt.target.closest('.card').remove());
   cardPhoto.addEventListener('click', (evt) => {
-    const title = evt.target.closest('.card__title');
-    photoElement.src = evt.target.src;
-    photoElement.alt = title;
-    photoPopupTitle.textContent = title;
+    photoPopupImage.src = evt.target.src;
+    photoPopupImage.alt = cardTitle.textContent;
+    photoPopupTitle.textContent = cardTitle.textContent;
     openPopup(photoPopup);
+    /* Здесь где-то надо сделать очистку фото-попапа от контента по закрытию.
+    А так же добавить новые способы закрытия по ESC и клику вне попапа */
   });
 
   return card;
@@ -110,7 +111,6 @@ initialCards.forEach((item) => {
   cardsContainer.append(createCard(item.name, item.link))
 });
 
-const popupCloseButtons = document.querySelectorAll('.popup__close-button');
 popupCloseButtons.forEach((item) => {
   const target = item.closest('.popup');
   item.addEventListener('click', () => closePopup(target));
